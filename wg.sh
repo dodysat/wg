@@ -13,6 +13,16 @@ WG_HOST=$(curl -4 -s ifconfig.me) || { echo "IP detection failed"; exit 1; }
 read -sp "Enter admin password: " PASSWORD < /dev/tty
 echo
 
+# Repeat password
+read -sp "Repeat password: " PASSWORD2 < /dev/tty
+echo
+
+# Check password
+if [ "$PASSWORD" != "$PASSWORD2" ]; then
+    echo "Error: Passwords do not match, please try again"
+    exit 1
+fi
+
 # Generate hash
 PASSWORD_HASH=$(docker run --rm -it ghcr.io/wg-easy/wg-easy wgpw "$PASSWORD" | grep -oP "PASSWORD_HASH='\K[^']+")
 
