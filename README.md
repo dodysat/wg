@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a simplest way to run wg-easy on your server.
+This is a simplest way to run [wg-easy](https://github.com/wg-easy/wg-easy/tree/c6dce0f6fb2e28e7e40ddac1498bd67e9bb17cba) on your server.
 
 ## Requirements
 
